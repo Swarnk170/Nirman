@@ -18,26 +18,27 @@
 
 **Nirman** is a modern SaaS web application that empowers users to build websites visually through an intelligent, component-driven editing experience. It bridges the gap between no-code simplicity and developer-grade control — combining a structured component editor with real-time preview and AI-assisted customization.
 
-> *Nirman (निर्माण) — meaning "construction" or "creation" in Nepali/Sanskrit — reflects the project's core purpose: building things from the ground up, intelligently.*
+> _Nirman (निर्माण) — meaning "construction" or "creation" in Nepali/Sanskrit — reflects the project's core purpose: building things from the ground up, intelligently._
 
 ---
 
 ## ✨ Core Features
 
-| Feature | Description |
-|---|---|
-| 🖱️ **Click-to-Edit** | Click any component to open its dedicated editing panel |
-| ⚡ **Instant Updates** | Content and style changes are reflected in real time — no page reloads |
-| 🤖 **AI / Prompt-Based Editing** | Describe changes in plain language and let the AI handle them |
-| 📱 **Responsive Preview** | Live preview across Desktop, Tablet, and Mobile viewports |
-| 📦 **Project Export** | Download the complete website project at any time |
-| 🔒 **Secure Auth** | Session management via `better-auth` — no extra state libraries needed |
+| Feature                          | Description                                                            |
+| -------------------------------- | ---------------------------------------------------------------------- |
+| 🖱️ **Click-to-Edit**             | Click any component to open its dedicated editing panel                |
+| ⚡ **Instant Updates**           | Content and style changes are reflected in real time — no page reloads |
+| 🤖 **AI / Prompt-Based Editing** | Describe changes in plain language and let the AI handle them          |
+| 📱 **Responsive Preview**        | Live preview across Desktop, Tablet, and Mobile viewports              |
+| 📦 **Project Export**            | Download the complete website project at any time                      |
+| 🔒 **Secure Auth**               | Session management via `better-auth` — no extra state libraries needed |
 
 ---
 
 ## 🧠 Tech Stack
 
 ### Frontend
+
 - **React.js** — Component-based UI
 - **Tailwind CSS** — Utility-first styling
 - **Lucide React** — Icon library
@@ -45,13 +46,16 @@
 > Authentication and session state are managed server-side via **better-auth**, eliminating the need for a frontend state management library.
 
 ### Backend
+
 - **Node.js** + **Express.js** — REST API server
 
 ### Database
+
 - **Prisma ORM** — Type-safe database access
 - **PostgreSQL** (via [Neon DB](https://neon.tech)) — Scalable serverless Postgres
 
 ### Authentication
+
 - **better-auth** — Secure, session-based authentication
 
 ---
@@ -59,20 +63,25 @@
 ## 🏗️ Architecture Overview
 
 ### Component-Based Editor
+
 Every UI element in Nirman is a structured object stored in a JSON component tree. This enables dynamic, isolated updates without full page reloads and makes the editor highly extensible.
 
 ### Editing System
+
 Rather than drag-and-drop (which introduces layout complexity), Nirman uses a **click-to-edit** model:
+
 1. Click a component → opens its editing panel
 2. Modify content or styles → reflected instantly in the canvas
 3. Use the AI prompt bar → describe a change and apply it automatically
 
 ### Data Storage
+
 - Website layouts are persisted as **JSON component trees**
 - Managed via **Prisma ORM** for type-safe, schema-driven access
 - Hosted on **Neon PostgreSQL** for serverless scalability
 
 ### Authentication
+
 `better-auth` handles all user sessions securely on the server side, keeping the frontend lean and stateless.
 
 ---
@@ -80,6 +89,7 @@ Rather than drag-and-drop (which introduces layout complexity), Nirman uses a **
 ## ⚙️ Setup & Installation
 
 ### Prerequisites
+
 - Node.js `v18+`
 - A [Neon DB](https://neon.tech) PostgreSQL connection string
 
@@ -131,9 +141,11 @@ The app will be available at `http://localhost:5173` (or your configured Vite po
 ## 🔌 API Reference
 
 ### `POST /api/register`
+
 Registers a new user account.
 
 **Request Body:**
+
 ```json
 {
   "email": "user@example.com",
@@ -144,9 +156,11 @@ Registers a new user account.
 ---
 
 ### `POST /api/websites`
+
 Creates a new website instance with an initialized root component structure.
 
 **Request Body:**
+
 ```json
 {
   "name": "My Portfolio",
@@ -157,9 +171,11 @@ Creates a new website instance with an initialized root component structure.
 ---
 
 ### `PUT /api/pages/:id`
+
 Updates a page's component tree with the latest JSON structure.
 
 **Request Body:**
+
 ```json
 {
   "components": [ ...component tree... ]
@@ -224,7 +240,7 @@ This project is licensed under the [MIT License](LICENSE).
 **Swarn Kumar Chaudhary**
 Computer Engineering Student — IOE WRC, Tribhuvan University
 
-GitHub: [your-username](https://github.com/your-username)
+GitHub: https://github.com/Swarnk170
 
 ---
 
